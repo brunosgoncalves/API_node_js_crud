@@ -9,7 +9,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false }));
 
-require('./controllers/auuthController')(app);
+require('./controllers/authController')(app);
 
-app.listen(3000);
+app.get('/',(req,res)=> {
+   res.send('ok');
+})
+
+app.listen(3030);
 
